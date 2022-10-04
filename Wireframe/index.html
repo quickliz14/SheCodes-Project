@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Wireframe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="src/style1.css" />
+    <script src="src/index.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://kit.fontawesome.com/3f2efdf1ae.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="weather-app">
+            <form>
+                <div class="row">
+                    <div class="col-6">
+                        <form class="form-search">
+                            <input type="search" placeholder="Search Your City..." class="form-control search-bar"
+                                id="input-city-name" />
+                        </form>
+                    </div>
+                </div>
+            </form>
+
+            <br />
+            <div class="row">
+                <div class="col-9" class="city">
+                    <h1 id="city-name">City Name</h1>
+                    <h2>
+                        <span class="main-temperature"><span id="temp"></span>°F</span>
+                    </h2>
+                </div>
+            </div>
+            <div class="row todays-weather">
+                <div class="col-7">
+                    <ul class="below-city">
+                        <li>
+                            As of
+                            <span id="time">Current Date, Current Time</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-5">
+                    <ul class="weather-description">
+                        <li><span id="weather-desc">
+                        <li>Wind Speed: <span id="wind-speed"></span>mph</li>
+                        <li>Humidity: <span id="humidity"></span>%</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="warning">
+                Your 7 Day Forecast - plan accordingly
+            </p>
+            <div class="row columns-days">
+                <div class="col-2 column-one">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="day-one">Tue</div>
+                            <div class="temperature-one">83°</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 column-two">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="day-two">Wed</div>
+                            <div class="temperature-two">82°</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 column-three">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="day-three">Thur</div>
+                            <div class="temperature-three">82°</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 column-four">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="day-four">Fri</div>
+                            <div class="temperature-four">85°</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 column-five">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="day-five">Sat</div>
+                            <div class="temperature-five">86°</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 column-six">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="day-five">Sun</div>
+                            <div class="temperature-five">88°</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
