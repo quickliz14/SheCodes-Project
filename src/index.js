@@ -37,24 +37,28 @@ searchButton.addEventListener("submit", changeCity);
 //New Main Weather Info
 function showWeather(response) {
   let temperatureElement = document.querySelector("#temp");
-  let cityElement = document.querySelector("#city-name");
-  let descriptionElement = document.querySelector("#weather-desc");
-  let humidityElement = document.querySelector("#humidity");
-  let windElement = document.querySelector("#wind-speed");
-  let iconElement = document.querySelector("#icon");
-
-  celsiusTemperature = response.data.main.temp;
-
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
+
+  let cityElement = document.querySelector("#city-name");
   cityElement.innerHTML = response.data.name;
+
+  let descriptionElement = document.querySelector("#weather-desc");
   descriptionElement.innerHTML = response.data.weather[0].description;
+
+  let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = response.data.main.humidity;
+
+  let windElement = document.querySelector("#wind-speed");
   windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
+
+  let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}10d@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  celsiusTemperature = response.data.main.temp;
 }
 
 //Weather API
@@ -96,9 +100,7 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", showcelsiusTemperature);
+celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 let form = document.querySelector("#form");
 form.addEventListener("submit", handleSubmit);
-
-searchCity("Los Angeles");
