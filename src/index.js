@@ -36,22 +36,23 @@ searchButton.addEventListener("submit", changeCity);
 
 //New Main Weather Info
 function showWeather(response) {
-  document.querySelector("#city-name").innerHTML = response.data.name;
-  document.querySelector("#temp").innerHTML = Math.round(
-    response.data.main.temp
+  let temperatureElement = document.querySelector("#temp");
+  let cityElement = document.querySelector("#city-name");
+  let descriptionElement = document.querytSelector("#weather-desc");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind-speed");
+  let iconElement = document.querySelector("#icon");
+
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  cityElement.innerHTML = response.data.name;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}10d@2x.png`
   );
-  document.querySelector("#weather-desc").innerHTML =
-    response.data.weather[0].description;
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#wind-speed").innerHTML = Math.round(
-    response.data.wind.speed * 3.6
-  );
-  //let iconElement = document.querySelector("#icon");
-  //iconElement.setAttribute(
-  //"src",
-  //`http://openweathermap.org/img/wn/${response.data.weather[0].icon}10d@2x.png`
-  //);
-  //iconElement.setAttribute("alt", response.data.weather[0].description);
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 //Weather API
@@ -69,11 +70,25 @@ function handleSubmit(event) {
   searchCity(city);
 }
 
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (14 * 9) / 5 + 32;
+  alert(fahrenheitTemperature);
+  let temperatureElement = document.querySelector("temperature");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+let celsuisTemperature = null;
+
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
-searchCity("Los Angeles");
 
 //Unit Conversaion
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
+searchCity("Los Angeles");
+
 //function convertCelsius(event) {
 // event.preventDefault();
 //let currentTemperature = document.querySelector("#temperature");
@@ -90,14 +105,3 @@ searchCity("Los Angeles");
 //celsiusUnit.classList.remove("active");
 //fahrenheitUnit.classList.add("active");
 //}
-
-//let fahrenheitTemperature = null;
-
-//let form = document.querySelector(".d-flex");
-//form.addEventListener("submit", search);
-
-//let celsiusUnit = document.querySelector("#celsius-link");
-//celsiusUnit.addEventListener("click", convertCelsius);
-
-//let fahrenheitUnit = document.querySelector("#fahrenheit-link");
-//fahrenheitUnit.addEventListener("click", convertFahrenheit);
