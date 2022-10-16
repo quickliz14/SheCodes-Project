@@ -71,34 +71,33 @@ function handleSubmit(event) {
 
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
+searchCity("Los Angeles");
 
 //Unit Conversaion
-function convertCelsius(event) {
-  event.preventDefault();
-  let currentTemperature = document.querySelector("#temperature");
-  let celsius = (5 / 9) * (Math.round(fahrenheitTemperature) - 32);
-  currentTemperature.innerHTML = Math.round(celsius);
-  celsiusUnit.classList.add("active");
-  fahrenheitUnit.classList.remove("active");
-}
+//function convertCelsius(event) {
+// event.preventDefault();
+//let currentTemperature = document.querySelector("#temperature");
+//let celsius = (5 / 9) * (Math.round(fahrenheitTemperature) - 32);
+//currentTemperature.innerHTML = Math.round(celsius);
+//celsiusUnit.classList.add("active");
+//fahrenheitUnit.classList.remove("active");
+//}
 
-function convertFahrenheit(event) {
-  event.preventDefault();
-  let currentTemperature = document.querySelector("#temperature");
-  currentTemperature.innerHTML = Math.round(fahrenheitTemperature);
-  celsiusUnit.classList.remove("active");
-  fahrenheitUnit.classList.add("active");
-}
+//function convertFahrenheit(event) {
+//event.preventDefault();
+//let currentTemperature = document.querySelector("#temperature");
+//currentTemperature.innerHTML = Math.round(fahrenheitTemperature);
+//celsiusUnit.classList.remove("active");
+//fahrenheitUnit.classList.add("active");
+//}
 
-let fahrenheitTemperature = null;
+//let fahrenheitTemperature = null;
 
-let form = document.querySelector(".d-flex");
-form.addEventListener("submit", search);
+//let form = document.querySelector(".d-flex");
+//form.addEventListener("submit", search);
 
-let celsiusUnit = document.querySelector("#celsius-link");
-celsiusUnit.addEventListener("click", convertCelsius);
+//let celsiusUnit = document.querySelector("#celsius-link");
+//celsiusUnit.addEventListener("click", convertCelsius);
 
-let fahrenheitUnit = document.querySelector("#fahrenheit-link");
-fahrenheitUnit.addEventListener("click", convertFahrenheit);
-
-searchCity("Los Angeles");
+//let fahrenheitUnit = document.querySelector("#fahrenheit-link");
+//fahrenheitUnit.addEventListener("click", convertFahrenheit);
