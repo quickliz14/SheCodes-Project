@@ -87,9 +87,9 @@ function showFahrenheitTemperature(event) {
 
 function showCelsiusTemperature(event) {
   event.preventDefault();
+  let temperatureElement = document.querySelector("#temp");
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
-  let temperatureElement = document.querySelector("#temp");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
@@ -104,3 +104,5 @@ celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 let form = document.querySelector("#form");
 form.addEventListener("submit", handleSubmit);
+
+searchCity("Los Angeles");
