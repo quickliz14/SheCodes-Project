@@ -1,4 +1,4 @@
-//Assignment 1
+//Date & Time
 let now = new Date();
 let currentTime = document.querySelector("#time");
 
@@ -23,7 +23,7 @@ let day = days[now.getDay()];
 
 currentTime.innerHTML = `${day} ${hour}:${minutes}`;
 
-///Assignment 2
+///New City
 function changeCity(event) {
   event.preventDefault();
   let h1 = document.querySelector("h1");
@@ -34,7 +34,7 @@ function changeCity(event) {
 let searchButton = document.querySelector("form");
 searchButton.addEventListener("submit", changeCity);
 
-//week 5 homework
+//New Main Weather Info
 function showWeather(response) {
   document.querySelector("#city-name").innerHTML = response.data.name;
   document.querySelector("#temp").innerHTML = Math.round(
@@ -46,14 +46,15 @@ function showWeather(response) {
   document.querySelector("#wind-speed").innerHTML = Math.round(
     response.data.wind.speed * 3.6
   );
-  let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}10d@2x.png`
-  );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
+  //let iconElement = document.querySelector("#icon");
+  //iconElement.setAttribute(
+  //"src",
+  //`http://openweathermap.org/img/wn/${response.data.weather[0].icon}10d@2x.png`
+  //);
+  //iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
+//Weather API
 function searchCity(city) {
   let apiKey = "1852aed5ea516d2b62e398fa77506e7c";
   let unit = "imperial";
@@ -70,5 +71,34 @@ function handleSubmit(event) {
 
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
+
+//Unit Conversaion
+function convertCelsius(event) {
+  event.preventDefault();
+  let currentTemperature = document.querySelector("#temperature");
+  let celsius = (5 / 9) * (Math.round(fahrenheitTemperature) - 32);
+  currentTemperature.innerHTML = Math.round(celsius);
+  celsiusUnit.classList.add("active");
+  fahrenheitUnit.classList.remove("active");
+}
+
+function convertFahrenheit(event) {
+  event.preventDefault();
+  let currentTemperature = document.querySelector("#temperature");
+  currentTemperature.innerHTML = Math.round(fahrenheitTemperature);
+  celsiusUnit.classList.remove("active");
+  fahrenheitUnit.classList.add("active");
+}
+
+let fahrenheitTemperature = null;
+
+let form = document.querySelector(".d-flex");
+form.addEventListener("submit", search);
+
+let celsiusUnit = document.querySelector("#celsius-link");
+celsiusUnit.addEventListener("click", convertCelsius);
+
+let fahrenheitUnit = document.querySelector("#fahrenheit-link");
+fahrenheitUnit.addEventListener("click", convertFahrenheit);
 
 searchCity("Los Angeles");
