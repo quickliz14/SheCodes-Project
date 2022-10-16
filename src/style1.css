@@ -15,7 +15,7 @@ h1 {
   font-size: 25px;
 }
 img {
-  width: 30px;
+  width: 45px;
   height: auto;
 }
 
@@ -27,6 +27,7 @@ ul {
   padding-top: 0px;
   padding-left: 0px;
 }
+
 .main-temperature {
   font-size: 45px;
   padding-right: 0px;
@@ -39,9 +40,13 @@ ul {
 .weather-description {
   text-align: end;
   padding-left: 0px;
+  text-transform: capitalize;
   float: right;
   font-size: 12px;
   display: inline;
+}
+.weather-description:first-letter {
+  text-transform: uppercase;
 }
 .columns-days {
   display: flex;
