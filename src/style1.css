@@ -15,7 +15,7 @@ h1 {
   font-size: 25px;
 }
 img {
-  width: 10px;
+  width: 30px;
   height: auto;
 }
 
@@ -55,6 +55,10 @@ ul {
 .column-four,
 .column-five,
 .column-six {
+  text-align: center;
+  font-size: 10px;
+}
+.small {
   text-align: center;
   font-size: 10px;
 }
