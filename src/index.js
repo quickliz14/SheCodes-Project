@@ -3,7 +3,13 @@ let now = new Date();
 let currentTime = document.querySelector("#time");
 
 let hour = now.getHours();
+if (hour < 10) {
+  hour = `0${hour}`;
+}
 let minutes = now.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
 let days = [
   "Sunday",
   "Monday",
@@ -60,3 +66,4 @@ let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
 
 searchCity("Los Angeles");
+//Adding in more data
