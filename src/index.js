@@ -43,7 +43,9 @@ function showWeather(response) {
   let windElement = document.querySelector("#wind-speed");
   let iconElement = document.querySelector("#icon");
 
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  celsuisTemperature = response.data.main.temp;
+
+  temperatureElement.innerHTML = Math.round(celsuisTemperature);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
@@ -72,36 +74,28 @@ function handleSubmit(event) {
 
 function showFahrenheitTemperature(event) {
   event.preventDefault();
-  let fahrenheitTemperature = (14 * 9) / 5 + 32;
+  let fahrenheitTemperature = (celsuisTemperature * 9) / 5 + 32;
   alert(fahrenheitTemperature);
-  let temperatureElement = document.querySelector("temperature");
+  let temperatureElement = document.querySelector("#temp");
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function showCelsuisTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temp");
+  temperatureElement.innerHTML = Math.round(celsuisTemperature);
 }
 
 let celsuisTemperature = null;
 
-let form = document.querySelector("form");
+let form = document.querySelector("#form");
 form.addEventListener("submit", handleSubmit);
 
 //Unit Conversaion
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
+let celsuisLink = document.querySelector("#celsuis-link");
+celsuisLink.addEventListener("click", showCelsuisTemperature);
+
 searchCity("Los Angeles");
-
-//function convertCelsius(event) {
-// event.preventDefault();
-//let currentTemperature = document.querySelector("#temperature");
-//let celsius = (5 / 9) * (Math.round(fahrenheitTemperature) - 32);
-//currentTemperature.innerHTML = Math.round(celsius);
-//celsiusUnit.classList.add("active");
-//fahrenheitUnit.classList.remove("active");
-//}
-
-//function convertFahrenheit(event) {
-//event.preventDefault();
-//let currentTemperature = document.querySelector("#temperature");
-//currentTemperature.innerHTML = Math.round(fahrenheitTemperature);
-//celsiusUnit.classList.remove("active");
-//fahrenheitUnit.classList.add("active");
-//}
