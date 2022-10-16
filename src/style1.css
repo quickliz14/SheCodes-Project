@@ -34,6 +34,14 @@ ul {
   margin-right: 5px;
   position: relative;
 }
+.main-temperature.active {
+  color: black;
+  cursor: default;
+}
+.main-temperature.active:hover {
+  text-decoration: none;
+}
+
 .warning {
   font-size: 12px;
 }

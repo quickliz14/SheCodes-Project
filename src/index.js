@@ -74,14 +74,17 @@ function handleSubmit(event) {
 
 function showFahrenheitTemperature(event) {
   event.preventDefault();
-  let fahrenheitTemperature = (celsuisTemperature * 9) / 5 + 32;
-  alert(fahrenheitTemperature);
   let temperatureElement = document.querySelector("#temp");
+  celsuisLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsuisTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 function showCelsuisTemperature(event) {
   event.preventDefault();
+  celsuisLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let temperatureElement = document.querySelector("#temp");
   temperatureElement.innerHTML = Math.round(celsuisTemperature);
 }
