@@ -56,13 +56,6 @@ function searchCity(city) {
   axios.get(apiUrl).then(showWeather);
 }
 
-let iconElement = document.querySelector("#icon");
-iconElement.setAttribute(
-  "src",
-  `http://openweathermap.org/img/wn/${response.data.weather[0].icon}10d@2x.png`
-);
-iconElement.setAttribute("alt", response.data.weather[0].description);
-
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#input-city-name").value;
