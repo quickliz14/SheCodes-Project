@@ -35,6 +35,10 @@ ul {
   text-decoration: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 .warning {
   font-size: 12px;
 }
