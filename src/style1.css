@@ -49,21 +49,26 @@ ul {
 .weather-description:first-letter {
   text-transform: uppercase;
 }
-.columns-days {
-  display: flex;
-  flex-direction: row;
-  font-size: 10px;
-  margin-top: 5px;
-}
-.column-one,
-.column-two,
-.column-three,
-.column-four,
-.column-five,
-.column-six {
+
+.weather-forecast {
+  margin-top: 20px;
   text-align: center;
-  font-size: 10px;
+  color: #000;
 }
+
+.weather-forecast-date {
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+.weather-forecast-temperatures-min {
+  opacity: 0.5;
+}
+
+.weather-forecast-temperatures {
+  font-size: 13px;
+}
+
 small {
   text-align: center;
   font-size: 10px;
