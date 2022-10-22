@@ -123,7 +123,6 @@ function showCelsiusTemperature(event) {
 }
 
 let celsiusTemperature = null;
-displayForecast();
 
 //Unit Conversaion
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
