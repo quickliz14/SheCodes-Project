@@ -27,8 +27,9 @@ currentTime.innerHTML = `${day} ${hour}:${minutes}`;
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
-  letforecastHTML = `<div class = "row">`;
   let days = ["Thu", "Fri", "Sat", "Sun"];
+
+  letforecastHTML = `<div class = "row">`;
 
   days.forEach(function (day) {
     forecastHTML =
@@ -135,3 +136,4 @@ let form = document.querySelector("#form");
 form.addEventListener("submit", handleSubmit);
 
 searchCity("Los Angeles");
+displayForecast();
