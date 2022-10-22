@@ -24,36 +24,34 @@ let day = days[now.getDay()];
 currentTime.innerHTML = `${day} ${hour}:${minutes}`;
 
 //Forecast
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
+//function displayForecast() {
+//let forecastElement = document.querySelector("#forecast");
 
-  letforecastHTML = `<div class = "row"`;
-  let days = ["Thu", "Fri", "Sat", "Sun", "Monday", "Tue", "Wed"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
- <div class="col-2 column-one">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="day-one">${day}</div>
-                            <img 
-                            src="http://openweathermap.org/img/wn/50d@2x.png"
-                            alt=""
-                            width="42"
-                            />
-                            <div class="temperature-one">
-                                <span class = "weather-forecast-tempature max">83°
-                                </span>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-                `;
-  });
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
-}
+//letforecastHTML = `<div class = "row"`;
+//let days = ["Thu", "Fri", "Sat", "Sun", "Monday", "Tue", "Wed"];
+//days.forEach(function (day) {
+//forecastHTML =
+//forecastHTML +
+//`
+// <div class="col-2">
+//<div class="weather-forecast-date">${day}</div>
+// <img
+// src="http://openweathermap.org/img/wn/50d@2x.png"
+// alt=""
+//width="42"
+///>
+//<div class="weather-forecast-tempatures">
+// <span class = "weather-forecast-tempature max">83°
+//</span>
+// <span class = "weather-forecast-tempature min">12°
+// </span>
+//</div>
+//</div>
+//`;
+// });
+//forecastHTML = forecastHTML + `</div>`;
+//forecastElement.innerHTML = forecastHTML;
+//}
 
 ///New City
 function changeCity(event) {
@@ -126,7 +124,7 @@ function showCelsiusTemperature(event) {
 
 let celsiusTemperature = null;
 
-displayForecast();
+//displayForecast();
 
 //Unit Conversaion
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
