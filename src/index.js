@@ -68,7 +68,9 @@ searchButton.addEventListener("submit", changeCity);
 //New Main Weather Info
 function showWeather(response) {
   let temperatureElement = document.querySelector("#temp");
+
   celsiusTemperature = response.data.main.temp;
+
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 
   let cityElement = document.querySelector("#city-name");
@@ -109,6 +111,7 @@ function handleSubmit(event) {
 function showFahrenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temp");
+
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
@@ -126,14 +129,14 @@ function showCelsiusTemperature(event) {
 let celsiusTemperature = null;
 
 //Unit Conversaion
+let form = document.querySelector("#form");
+form.addEventListener("submit", handleSubmit);
+
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
-
-let form = document.querySelector("#form");
-form.addEventListener("submit", handleSubmit);
 
 searchCity("Los Angeles");
 displayForecast();
