@@ -67,9 +67,10 @@ searchButton.addEventListener("submit", changeCity);
 
 //Forecast Function API
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "1852aed5ea516d2b62e398fa77506e7c";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=${apiKey}`;
+  console.log(apiUrl);
+
   axios.get(apiUrl).then(displayForecast);
 }
 
