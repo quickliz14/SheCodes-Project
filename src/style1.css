@@ -27,12 +27,13 @@ ul {
   padding-right: 0px;
   margin-right: 5px;
   position: relative;
+  text-decoration: none;
 }
-.units.active {
+.main-temperature.active {
   color: black;
   cursor: default;
 }
-.units.active:hover {
+.main-temperature.active:hover {
   text-decoration: none;
 }
 
