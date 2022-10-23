@@ -29,6 +29,10 @@ ul {
   position: relative;
   text-decoration: none;
 }
+a {
+  color: black;
+  text-decoration: none;
+}
 .main-temperature.active {
   color: black;
   cursor: default;
