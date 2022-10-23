@@ -92,9 +92,9 @@ function getForecast(coordinates) {
 function showWeather(response) {
   let temperatureElement = document.querySelector("#temp");
 
-  celsiusTemperature = response.data.main.temp;
+  fahrenheitTemperature = response.data.main.temp;
 
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 
   let cityElement = document.querySelector("#city-name");
   cityElement.innerHTML = response.data.name;
