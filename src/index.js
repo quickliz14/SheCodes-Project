@@ -67,7 +67,7 @@ searchButton.addEventListener("submit", changeCity);
 
 //Forecast Function API
 function getForecast(coordinates) {
-  let apiKey = "1852aed5ea516d2b62e398fa77506e7c";
+  let apiKey = "b2d9fa1f2b35557e4615dd5fab218834";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=${apiKey}`;
   console.log(apiUrl);
 
