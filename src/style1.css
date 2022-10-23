@@ -32,6 +32,7 @@ ul {
 a {
   color: black;
   text-decoration: none;
+  cursor: default;
 }
 .main-temperature.active {
   color: black;
@@ -39,6 +40,8 @@ a {
 }
 .main-temperature.active:hover {
   text-decoration: none;
+  color: black;
+  cursor: default;
 }
 
 .warning {
