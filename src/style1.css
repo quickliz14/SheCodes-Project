@@ -8,10 +8,6 @@ h1 {
   font-size: 25px;
 }
 
-h2 {
-  text-decoration: none;
-}
-
 img {
   width: 60px;
   height: auto;
@@ -32,11 +28,11 @@ ul {
   margin-right: 5px;
   position: relative;
 }
-.main-temperature.active {
+.units.active {
   color: black;
   cursor: default;
 }
-.main-temperature.active:hover {
+.units.active:hover {
   text-decoration: none;
 }
 
