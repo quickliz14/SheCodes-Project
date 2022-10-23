@@ -25,6 +25,7 @@ currentTime.innerHTML = `${day} ${hour}:${minutes}`;
 
 //Forecast
 function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Thu", "Fri", "Sat", "Sun"];
@@ -38,7 +39,7 @@ function displayForecast(response) {
 <div class="col-2">
 <div class="weather-forecast-date">${day}</div>
 <img
-src="https://openweathermap.org/img/wn/50d@2x.png"
+src="http://openweathermap.org/img/wn/50d@2x.png"
 alt=""
 width="42"
 />
@@ -55,10 +56,13 @@ width="42"
 }
 
 function getForecast(coordinates) {
+  console.log(coordinates);
   let apiKey = "1852aed5ea516d2b62e398fa77506e7c";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
+
+///I think you should move new main weather info here.
 
 ///New City
 function changeCity(event) {
@@ -94,7 +98,7 @@ function showWeather(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
-    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
