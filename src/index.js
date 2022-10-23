@@ -55,15 +55,6 @@ width="42"
   forecastElement.innerHTML = forecastHTML;
 }
 
-function getForecast(coordinates) {
-  console.log(coordinates);
-  let apiKey = "1852aed5ea516d2b62e398fa77506e7c";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayForecast);
-}
-
-///I think you should move new main weather info here.
-
 ///New City
 function changeCity(event) {
   event.preventDefault();
@@ -74,6 +65,14 @@ function changeCity(event) {
 
 let searchButton = document.querySelector("form");
 searchButton.addEventListener("submit", changeCity);
+
+//Forecast Function API
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "1852aed5ea516d2b62e398fa77506e7c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 
 //New Main Weather Info
 function showWeather(response) {
