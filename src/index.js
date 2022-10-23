@@ -23,7 +23,7 @@ let day = days[now.getDay()];
 
 currentTime.innerHTML = `${day} ${hour}:${minutes}`;
 
-//Forecast
+//Forecast CHECK THIS
 function displayForecast(response) {
   console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
@@ -31,7 +31,6 @@ function displayForecast(response) {
   let days = ["Thu", "Fri", "Sat", "Sun"];
 
   let forecastHTML = `<div class = "row">`;
-
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
@@ -44,8 +43,8 @@ alt=""
 width="42"
 />
 <div class="weather-forecast-temperatures">
-<span class = "weather-forecast-temperature max"> 83°</span>
-<span class = "weather-forecast-temperature min"> 12° </span>
+<span class = "weather-forecast-temperature-max"> 83° </span>
+<span class = "weather-forecast-temperature-min"> 12° </span>
 </div>
 </div>
 `;
