@@ -139,19 +139,19 @@ function showFahrenheitTemperature(event) {
 
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 function showCelsiusTemperature(event) {
   event.preventDefault();
+  let celsiusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
   let temperatureElement = document.querySelector("#temp");
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
-let celsiusTemperature = null;
+let fahrenheitTemperature = null;
 
 //Unit Conversaion
 let form = document.querySelector("#form");
